@@ -19,12 +19,12 @@ package com.datamountaineer.streamreactor.connect.jms.source
 import java.util
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicLong
-import javax.jms.Message
 
+import javax.jms.Message
 import com.datamountaineer.streamreactor.connect.jms.config.{JMSConfig, JMSConfigConstants, JMSSettings}
 import com.datamountaineer.streamreactor.connect.jms.source.readers.JMSReader
 import com.datamountaineer.streamreactor.connect.utils.{JarManifest, ProgressCounter}
-import com.typesafe.scalalogging.slf4j.StrictLogging
+import com.typesafe.scalalogging.StrictLogging
 import org.apache.kafka.connect.source.{SourceRecord, SourceTask}
 
 import scala.collection.JavaConversions._

@@ -64,8 +64,8 @@ allprojects {
     }
 
     ext {
-        scalaMajorVersion = '2.11'
-        scala = '2.11.7'
+        scalaMajorVersion = '2.12'
+        scala = '2.12.2'
         scalaCheck = '1.13.4'
         scalaTest = '3.0.1'
         junit = '4.11'
@@ -73,7 +73,7 @@ allprojects {
         scalaLoggingVersion = '2.1.2'
         mockitoVersion = '1.10.19'
         jacksonDatabind = '2.8.5'
-        slf4jVersion = "1.7.7"
+        slf4jVersion = "1.7.25"
         json4sVersion = "3.5.3"
         gsonVersion = "2.6.2"
         KCQLVersion = "2.6.1"
@@ -82,7 +82,7 @@ allprojects {
 
         // The following 4 need to align to compile against a particular version
         confluentVersion = '4.1.0'
-        kafkaVersion = '1.1.0'
+        kafkaVersion = '0.11.0.1'
         dataMountaineerCommonVersion = "1.1.3"
         link4jVersion = "1.8.0"
 
@@ -190,7 +190,10 @@ allprojects {
     dependencies {
         compile "org.scala-lang:scala-library:$scala"
         compile "org.scala-lang:scala-compiler:$scala"
-        compile "com.typesafe.scala-logging:scala-logging-slf4j_$scalaMajorVersion:$scalaLoggingVersion"
+        //compile "com.typesafe.scala-logging:scala-logging-slf4j12:$scalaLoggingVersion"
+        //compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+        compile group: 'com.typesafe.scala-logging', name: 'scala-logging_2.12', version: '3.9.0'
+        compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 
         compile ("org.apache.kafka:connect-json:$kafkaVersion")
         compile "io.confluent:kafka-connect-avro-converter:$confluentVersion"

@@ -17,13 +17,11 @@
 package com.datamountaineer.streamreactor.connect.jms.sink.writer
 
 import javax.jms._
-
-import com.datamountaineer.streamreactor.connect.errors.ErrorHandler
-import com.datamountaineer.streamreactor.connect.jms.JMSSessionProvider
+import com.datamountaineer.streamreactor.connect.jms.{ErrorHandler, JMSSessionProvider}
 import com.datamountaineer.streamreactor.connect.jms.config.{JMSSetting, JMSSettings}
 import com.datamountaineer.streamreactor.connect.jms.sink.converters.{JMSMessageConverter, JMSMessageConverterFn}
 import com.datamountaineer.streamreactor.connect.schemas.ConverterUtil
-import com.typesafe.scalalogging.slf4j.StrictLogging
+import com.typesafe.scalalogging.StrictLogging
 import org.apache.kafka.connect.sink.SinkRecord
 
 import scala.util.{Failure, Success, Try}
